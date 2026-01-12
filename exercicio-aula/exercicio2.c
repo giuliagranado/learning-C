@@ -1,0 +1,1 @@
+#include <stdio.h> // biblioteca padrão de entrada e saída
