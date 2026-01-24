@@ -1,43 +1,69 @@
-// função insert sort
-#include <stdio.h>     // biblioteca padrão de entrada e saída
+#include <stdio.h>
+#include <stdlib.h>
 
-void insert_sort(int array[], int n) {
+// função insertion sort com contagem de comparações
+int insert_sort(int array[], int n) {
     int i, key, j;
+    int comparacoes = 0;
+    for (i = 1; i < n; i++) {
+        key = array[i];
+        j = i - 1;
 
- for (i = 1 ; i < n; i++) {   //loop p percorrer o array
-    key = array[i];
-    j = i - 1;
-
-    while ( j >= 0 && array[j] > key){ // compara o elemento anterior com o atual - enquanto for maior -> troca
-        array[j+1] = array[j];   // se for maior, troca a posição
-        j = j - 1;
+        // compara e desloca enquanto necessário
+        while (j >= 0) {
+            comparacoes++; // conta a comparação
+            if (array[j] > key) {
+                array[j+1] = array[j];
+                j = j - 1;
+            } else {
+                break; // se não precisa trocar, sai do while
+            }
+        }
+        array[j + 1] = key;
     }
-    array[j + 1] = key;  // insere o key na posição correta
- }
+    return comparacoes;
 }
 
-// para exibir o array
- void printArray(int array[], int n) {
-    int i;   //declara variavel p o loop
-    for (i = 0; i< n; i++) {
-        printf("%d ", array[i]);  // imprime o elemento atual do array
+// função para imprimir o array
+void printArray(int array[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", array[i]);
     }
-    printf("\n");  // quebra de linha
- }
+    printf("\n");
+}
 
- // função principal
- int main() {
-    int array[] = {12,11,13,5,6}; // declara e inicia o array
-    int n = sizeof(array)/sizeof(array[0]); //calcula n de elementos do array
+// função principal
+int main() {
+    int comparacoes, i, r;
+    int n = 100;
+    int *arr = (int*) malloc(n * sizeof(int));
 
-    printf("Array original: \n");
-    printArray(array,n); //chama função p/ imprimir array original
-
-    insert_sort(array,n); // chama a função 
-
-    printf("Array ordernado: \n");
-    printArray(array,n); // chama função p/ imprimir o array já ordenado
-
-    return 0;  // retorna 0 p/ indicar q o programa terminou com sucesso
-
+    /* CASO MÉDIO */
+    for (i = 0; i < n; i++) {
+        r = rand() % 1000;
+        arr[i] = r;
     }
+    comparacoes = insert_sort(arr, n);
+    printf("Caso medio: %d\n", comparacoes);
+
+    /* MELHOR CASO (já ordenado) */
+    for (i = 0; i < n; i++) {
+        arr[i] = i;
+    }
+    comparacoes = insert_sort(arr, n);
+    printf("Melhor caso: %d\n", comparacoes);
+
+    /* PIOR CASO (ordenado decrescente) */
+    for (i = 0; i < n; i++) {
+        arr[i] = n - i;
+    }
+    comparacoes = insert_sort(arr, n);
+    printf("Pior caso: %d\n", comparacoes);
+
+    free(arr);
+    return 0;
+}
+// finitude: A cada iteração do loop externo, o índice 'i' é incrementado, garantindo que o loop termine após 'n-1' iterações.
+// corretude: O algoritmo insere cada elemento na posição correta dentro da sublista ordenada à esquerda, garantindo que o array esteja ordenado ao final do processo.
+// complexidade: No pior caso (array ordenado em ordem decrescente), a complexidade é O(n^2). No melhor caso (array já ordenado), a complexidade é O(n). A complexidade média também é O(n^2).
+//custo de memoria: O algoritmo utiliza espaço adicional constante O(1), já que a ordenação é feita in-place, sem necessidade de estruturas auxiliares proporcionais ao tamanho do array.
