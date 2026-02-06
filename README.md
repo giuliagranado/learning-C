@@ -11,6 +11,10 @@ Learning-C
 ├── Estrutura de dados // busca binaria e sequencial, grafos, arvores
 ├── exercicio-aula  // entregas de atividades
 ├── outros     // apredendo C 
-└── Sort  // matéria de ordenação
+├── Sort  // matéria de ordenação
+|
+├── gitignore
+├── license
+└── README.md
 <pre>
 
