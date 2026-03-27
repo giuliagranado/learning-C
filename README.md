@@ -1,9 +1,9 @@
 # Learning-C
-Realizando o Curso de Verão2026 da USP - Tópicos de Programação
+Realizando o Curso de Verão2026 da USP -> Tópicos de Programação
 
-Por que não aproveitar a oportunidade para aprender uma nova linguagem de Programação? (pensei)
+Aproveitar a oportunidade para aprender uma nova linguagem de Programação: C✨
 
-O curso é desenvolvido predominantemente em linguagem C, nesse repositório colocarei as lições a serem entrgues, os exercícios- aulas e algumas tentativas (particulares) de aprender essa nova linguagem.
+Grande parte do curso foi desenvolvido em linguagem C, nesse repositório colocarei as lições entrgues, os exercícios- aulas e algumas tentativas (particulares) de aprender essa nova linguagem.
 
 ## Estrutura 
 <pre>
