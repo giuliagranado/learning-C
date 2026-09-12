@@ -1,9 +1,16 @@
 # Learning-C
-Realizando o Curso de Verão2026 da USP -> Tópicos de Programação
+Realizado : Curso Tópicos de Programação do Programa de Verão da USP 2026                                                                      
 
-Aproveitar a oportunidade para aprender uma nova linguagem de Programação: C✨
+->  *Aproveitando a oportunidade para aprender uma nova linguagem de Programação, dessa vez: o C  :)*
 
-Grande parte do curso foi desenvolvido em linguagem C, nesse repositório colocarei as lições entrgues, os exercícios- aulas e algumas tentativas (particulares) de aprender essa nova linguagem.
+
+O curso foi desenvolvido predominantemente em linguagem C e nesse repositório colocarei:
+  *  As lições entregues
+  *  Os exercícios das aulas
+  *  Algumas tentativas (particulares) de aprender essa nova linguagem.
+  *  E o Certificado - curso concluído!✨
+
+
 
 ## Estrutura 
 <pre>
@@ -12,9 +19,12 @@ Learning-C
 ├── exercicio-aula  // entregas de atividades
 ├── outros     // apredendo C 
 ├── Sort  // matéria de ordenação
+├── Certificado // Curso Concluído com sucesso! 
+├──  Fatec_ExercicioSala // exercicios e entregas da faculdade 
 |
 ├── gitignore
 ├── license
 └── README.md
 <pre>
 
+*The news: Agora também estudo C na FATEC, foi add uma nova pasta ao repositório*
